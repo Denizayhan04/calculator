@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.4.4/math.js"></script>
+</head>
+<body>
+    <div class="calculator-container">
+        <div class="calculator">
+            <div class="display">
+                <input type="text" id="input" placeholder="Enter expression..." readonly>
+                <div id="result"></div>
+            </div>
+            <div class="buttons">
+                <!-- First Row -->
+                <button class="special" onclick="clearInput()">C</button>
+                <button class="special" onclick="deleteLast()">⌫</button>
+                <button class="operator" onclick="appendOperator('/')">/</button>
+                <button class="operator" onclick="appendOperator('*')">×</button>
+                
+                <!-- Numbers and Basic Operators -->
+                <button onclick="appendNumber('7')">7</button>
+                <button onclick="appendNumber('8')">8</button>
+                <button onclick="appendNumber('9')">9</button>
+                <button class="operator" onclick="appendOperator('-')">-</button>
+                
+                <button onclick="appendNumber('4')">4</button>
+                <button onclick="appendNumber('5')">5</button>
+                <button onclick="appendNumber('6')">6</button>
+                <button class="operator" onclick="appendOperator('+')">+</button>
+                
+                <button onclick="appendNumber('1')">1</button>
+                <button onclick="appendNumber('2')">2</button>
+                <button onclick="appendNumber('3')">3</button>
+                <button class="operator" onclick="calculate()">=</button>
+                
+                <button onclick="appendNumber('0')">0</button>
+                <button onclick="appendNumber('.')">.</button>
+                <button onclick="appendNumber('x')">x</button>
+                <button class="operator" onclick="appendOperator('^')">^</button>
+
+                <!-- Trigonometric Functions -->
+                <button class="function" onclick="appendFunction('sin(')">sin</button>
+                <button class="function" onclick="appendFunction('cos(')">cos</button>
+                <button class="function" onclick="appendFunction('tan(')">tan</button>
+                <button onclick="appendOperator('(')">(</button>
+
+                <!-- Inverse Trigonometric Functions -->
+                <button class="function" onclick="appendFunction('asin(')">arcsin</button>
+                <button class="function" onclick="appendFunction('acos(')">arccos</button>
+                <button class="function" onclick="appendFunction('atan(')">arctan</button>
+                <button onclick="appendOperator(')')">)</button>
+
+                <!-- Calculus Functions -->
+                <button class="function" onclick="appendFunction('derivative(')">d/dx</button>
+                <button class="function" onclick="appendFunction('integral(')">∫</button>
+                <button class="function" onclick="appendFunction('sqrt(')">√</button>
+                <button class="function" onclick="appendFunction('e')">e</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
